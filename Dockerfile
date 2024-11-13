@@ -1,6 +1,8 @@
-FROM node:slim
+FROM node:18.20.1-alpine
 WORKDIR /counterApp
+COPY package.json ./
+RUN npm install
 COPY . .
-RUN npm ci
-CMD node ./dist/src/server.js
+RUN npm run build
 EXPOSE 8080
+CMD [ "npm", "start" ]
