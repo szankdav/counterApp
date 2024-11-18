@@ -13,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app: Express = express();
-const port = 8080;
+const port = 3000;
 
 app.use(express.static(path.join(__dirname, '../../src/public')))
 app.use('/css', express.static(path.join(__dirname, '../../node_modules/bootstrap/dist/css')));
@@ -21,7 +21,7 @@ app.use('/js', express.static(path.join(__dirname, '../../node_modules/bootstrap
 app.use('/ts', express.static(path.join(__dirname, './public')));
 
 app.listen(port, () => {
-    console.log("Listening in 8080!");
+    console.log("Listening in 3000!");
 })
 
 app.get('/', (req: Request, res: Response) => {
